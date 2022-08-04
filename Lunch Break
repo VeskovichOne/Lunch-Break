@@ -1,0 +1,30 @@
+using System;
+
+namespace RelaxForFilm
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string seriesName = Console.ReadLine();
+            int episodTime = int.Parse(Console.ReadLine());
+            int relax = int.Parse(Console.ReadLine());
+
+            double timeForLunch = relax * 0.125;
+            double timeForRelax = relax * 0.25;
+
+
+            double leftTime = relax - timeForLunch - timeForRelax;
+            if (leftTime>=episodTime)
+            {
+                Console.WriteLine($"You have enough time to watch {seriesName} and left with {Math.Ceiling(leftTime-episodTime)} minutes free time.");
+            }
+            else
+            {
+                Console.WriteLine($"You don't have enough time to watch {seriesName}, you need {Math.Ceiling(Math.Abs(leftTime-episodTime))} more minutes.");
+            }
+           
+           
+        }
+    }
+}
